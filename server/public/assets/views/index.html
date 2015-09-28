@@ -7,6 +7,23 @@
     <title>Prez Picker 3000</title>
 </head>
 <body ng-controller="MainController">
+<h1>Prez Picker 3000</h1>
+<button ng-click="displayButton = true">Show Candidates</button>
+<div ng-show="displayButton">
+    <button ng-click="electButton = true">Decide Winner</button>
+
+    <ul>
+        <li ng-repeat="candidate in democrats">{{candidate.fname}} {{candidate.lname}}</li>
+    </ul>
+    <ul>
+        <li ng-repeat="candidate in republicans">{{candidate.fname}} {{candidate.lname}}</li>
+    </ul>
+    <div ng-show="electButton">
+        The Winner is:
+        <div ng-show="demsWin">{{DemWinner.fname}} {{DemWinner.lname}}</div>
+        <div ng-show="repsWin">{{RepWinner.fname}} {{RepWinner.lname}}</div>
+    </div>
+</div>
 
 </body>
 </html>
