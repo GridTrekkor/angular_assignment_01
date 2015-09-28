@@ -9,21 +9,22 @@
 <body ng-controller="MainController">
 <h1>Prez Picker 3000</h1>
 <button ng-click="displayButton = true">Show Candidates</button>
-<div ng-show="displayButton">
-    <button ng-click="electButton = true">Decide Winner</button>
-
+<button ng-click="electButton = true" ng-show="displayButton">Decide Winner</button>
+<br>
+<div style="float: left;width: 200px;" ng-show="displayButton">
     <ul>
         <li ng-repeat="candidate in democrats">{{candidate.fname}} {{candidate.lname}}</li>
     </ul>
     <ul>
         <li ng-repeat="candidate in republicans">{{candidate.fname}} {{candidate.lname}}</li>
     </ul>
-    <div ng-show="electButton">
-        The Winner is:
-        <div ng-show="demsWin">{{DemWinner.fname}} {{DemWinner.lname}}</div>
-        <div ng-show="repsWin">{{RepWinner.fname}} {{RepWinner.lname}}</div>
-    </div>
 </div>
+    <div style="float: left;width:200px" ng-show="electButton">
+        <h2>The Winner is:
+        <div ng-show="demsWin" style="color:blue;">{{DemWinner.fname}} {{DemWinner.lname}}</div>
+        <div ng-show="repsWin" style="color:red;">{{RepWinner.fname}} {{RepWinner.lname}}</div></h2>
+    </div>
+
 
 </body>
 </html>
